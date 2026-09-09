@@ -1,0 +1,7 @@
+# Tooling / harness working artifacts
+.deepseek-harness/
+.dsh-vision-toolkit/
+
+# Large / duplicate asset source files not referenced by the README
+assets/profile2.png
+assets/hero_banner_v4.png
