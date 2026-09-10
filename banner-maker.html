@@ -135,8 +135,12 @@
         </select>
       </div>
       <div class="field">
-        <label>左上角小字高度 / Eyebrow Y · <span id="eyeTopVal">22%</span></label>
-        <input type="range" id="eyeTop" min="4" max="40" step="1" value="22" />
+        <label>左上角小字高度 / Eyebrow Y · <span id="eyeTopVal">16%</span></label>
+        <input type="range" id="eyeTop" min="4" max="45" step="1" value="16" />
+      </div>
+      <div class="field">
+        <label>主标题高度 / Title Y · <span id="titleYVal">36%</span></label>
+        <input type="range" id="titleY" min="15" max="70" step="1" value="36" />
       </div>
       <div class="field">
         <label>更换背景 / Background</label>
@@ -192,24 +196,17 @@
     var eyebrowSize = 15 * S;
     var titleSize   = 52 * S;
     var subSize     = 19 * S;
-    var gap1 = 18 * S;              // eyebrow -> 渐变线
+    var gap1 = 15 * S;                          // 小字 -> 渐变线
     var ruleW = 64 * S, ruleH = Math.max(2, 3 * S);
-    var gap2 = 26 * S;              // 渐变线 -> 主标题
-    var gap3 = 22 * S;              // 主标题 -> 副标题
-
-    var total = eyebrowSize + gap1 + ruleH + gap2 + titleSize + gap3 + subSize;
-    var blockY = (H - total) / 2;          // 标题组按整块居中（位置不变）
-    var ruleY  = blockY + eyebrowSize + gap1;
+    var gap3 = 22 * S;                          // 主标题 -> 副标题
 
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
 
-    // ① 左上角小字：独立定位（滑块控制距顶部的高度），与下方标题组解耦
-    var eyeTopPct = parseFloat(document.getElementById('eyeTop').value);
-    if (isNaN(eyeTopPct)) eyeTopPct = 22;
-    var eyeY = H * eyeTopPct / 100;
-    var maxEyeY = ruleY - eyebrowSize - 6 * S;     // 避免与渐变线重叠
-    if (eyeY > maxEyeY) eyeY = maxEyeY;
+    /* ===== 上组：左上角小字 + 紧跟其下的渐变线 ===== */
+    var eyePct = parseFloat(document.getElementById('eyeTop').value);
+    if (isNaN(eyePct)) eyePct = 16;
+    var eyeY = H * eyePct / 100;
     if (eyeY < 4 * S) eyeY = 4 * S;
 
     ctx.fillStyle = '#718096';
@@ -217,27 +214,30 @@
     ctx.letterSpacing = (0.02 * eyebrowSize) + 'px';
     ctx.fillText(val('tEye'), marginX, eyeY);
 
-    // ② 渐变横线
-    var y = ruleY;
+    var ruleY = eyeY + eyebrowSize + gap1;      // 横线永远位于小字下方
+
     var g = ctx.createLinearGradient(marginX, 0, marginX + ruleW, 0);
     g.addColorStop(0, '#1A365D');
     g.addColorStop(1, '#3182CE');
     ctx.fillStyle = g;
-    ctx.fillRect(marginX, y, ruleW, ruleH);
-    y += ruleH + gap2;
+    ctx.fillRect(marginX, ruleY, ruleW, ruleH);
 
-    // ③ 主标题（单行，不换行）
+    /* ===== 下组：主标题 + 副标题（独立高度控制） ===== */
+    var tPct = parseFloat(document.getElementById('titleY').value);
+    if (isNaN(tPct)) tPct = 38;
+    var titleY = H * tPct / 100;
+    var minTitleY = ruleY + ruleH + 8 * S;      // 不与渐变线重叠
+    if (titleY < minTitleY) titleY = minTitleY;
+
     ctx.fillStyle = '#0B1A2F';
     ctx.font = '700 ' + titleSize + 'px ' + FONT;
     ctx.letterSpacing = (0.01 * titleSize) + 'px';
-    ctx.fillText(val('tTitle'), marginX, y);
-    y += titleSize + gap3;
+    ctx.fillText(val('tTitle'), marginX, titleY);
 
-    // ④ 副标题
     ctx.fillStyle = '#334155';
     ctx.font = '400 ' + subSize + 'px ' + FONT;
     ctx.letterSpacing = (0.12 * subSize) + 'px';
-    ctx.fillText(val('tSub'), marginX, y);
+    ctx.fillText(val('tSub'), marginX, titleY + titleSize + gap3);
 
     ctx.letterSpacing = '0px';
   }
@@ -300,6 +300,10 @@
     document.getElementById('eyeTopVal').textContent = this.value + '%';
     render();
   });
+  document.getElementById('titleY').addEventListener('input', function () {
+    document.getElementById('titleYVal').textContent = this.value + '%';
+    render();
+  });
 
   document.getElementById('bgFile').addEventListener('change', function (e) {
     var f = e.target.files && e.target.files[0];
@@ -319,8 +323,10 @@
     document.getElementById('tSub').value = 'Agent Orchestration · AI Infrastructure · Full-Stack Development';
     document.getElementById('tEye').value = 'YARESTAV / BUILD LOG';
     document.getElementById('scale').value = '1';
-    document.getElementById('eyeTop').value = '22';
-    document.getElementById('eyeTopVal').textContent = '22%';
+    document.getElementById('eyeTop').value = '16';
+    document.getElementById('eyeTopVal').textContent = '16%';
+    document.getElementById('titleY').value = '36';
+    document.getElementById('titleYVal').textContent = '36%';
     loadBg(DEFAULT_BG).then(render);
     statusEl.textContent = '已恢复默认。';
   });
