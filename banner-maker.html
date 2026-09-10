@@ -64,6 +64,7 @@
     color: var(--ink);
     min-width: 240px;
   }
+  .field input[type="range"] { min-width: 200px; accent-color: var(--accent); }
   .field.grow { flex: 1 1 320px; }
   .field.grow input { width: 100%; min-width: 0; }
   input[type="file"] { font-size: 12px; }
@@ -134,6 +135,10 @@
         </select>
       </div>
       <div class="field">
+        <label>左上角小字高度 / Eyebrow Y · <span id="eyeTopVal">22%</span></label>
+        <input type="range" id="eyeTop" min="4" max="40" step="1" value="22" />
+      </div>
+      <div class="field">
         <label>更换背景 / Background</label>
         <input type="file" id="bgFile" accept="image/*" />
       </div>
@@ -193,19 +198,27 @@
     var gap3 = 22 * S;              // 主标题 -> 副标题
 
     var total = eyebrowSize + gap1 + ruleH + gap2 + titleSize + gap3 + subSize;
-    var y = (H - total) / 2;
+    var blockY = (H - total) / 2;          // 标题组按整块居中（位置不变）
+    var ruleY  = blockY + eyebrowSize + gap1;
 
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
 
-    // ① 左上角小字
+    // ① 左上角小字：独立定位（滑块控制距顶部的高度），与下方标题组解耦
+    var eyeTopPct = parseFloat(document.getElementById('eyeTop').value);
+    if (isNaN(eyeTopPct)) eyeTopPct = 22;
+    var eyeY = H * eyeTopPct / 100;
+    var maxEyeY = ruleY - eyebrowSize - 6 * S;     // 避免与渐变线重叠
+    if (eyeY > maxEyeY) eyeY = maxEyeY;
+    if (eyeY < 4 * S) eyeY = 4 * S;
+
     ctx.fillStyle = '#718096';
     ctx.font = '400 ' + eyebrowSize + 'px ' + FONT;
     ctx.letterSpacing = (0.02 * eyebrowSize) + 'px';
-    ctx.fillText(val('tEye'), marginX, y);
-    y += eyebrowSize + gap1;
+    ctx.fillText(val('tEye'), marginX, eyeY);
 
     // ② 渐变横线
+    var y = ruleY;
     var g = ctx.createLinearGradient(marginX, 0, marginX + ruleW, 0);
     g.addColorStop(0, '#1A365D');
     g.addColorStop(1, '#3182CE');
@@ -283,6 +296,10 @@
     document.getElementById(id).addEventListener('input', render);
   });
   document.getElementById('scale').addEventListener('change', render);
+  document.getElementById('eyeTop').addEventListener('input', function () {
+    document.getElementById('eyeTopVal').textContent = this.value + '%';
+    render();
+  });
 
   document.getElementById('bgFile').addEventListener('change', function (e) {
     var f = e.target.files && e.target.files[0];
@@ -302,6 +319,8 @@
     document.getElementById('tSub').value = 'Agent Orchestration · AI Infrastructure · Full-Stack Development';
     document.getElementById('tEye').value = 'YARESTAV / BUILD LOG';
     document.getElementById('scale').value = '1';
+    document.getElementById('eyeTop').value = '22';
+    document.getElementById('eyeTopVal').textContent = '22%';
     loadBg(DEFAULT_BG).then(render);
     statusEl.textContent = '已恢复默认。';
   });
