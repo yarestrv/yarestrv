@@ -67,12 +67,11 @@ I care about the details too: **[evaluation, durable state, observability]** —
 ## GitHub Stats
 
 <p align="center">
-  <img alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=yarestrv&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true">
-  <img alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yarestrv&layout=compact&theme=radical&hide_border=true">
+  <img alt="GitHub stats and top languages" src="./assets/github-stats.png" width="100%">
 </p>
 
 <p align="center">
-  <img alt="streak" src="https://github-readme-streak-stats.herokuapp.com/?user=yarestrv&theme=radical&hide_border=true">
+  <img alt="streak" src="https://streak-stats.demolab.com/?user=yarestrv&hide_border=true">
 </p>
 
 ## GitHub Roast
