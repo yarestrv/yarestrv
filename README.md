@@ -1,4 +1,4 @@
-<img alt="Yarestrv: agent-driven business value" src="./assets/hero-banner.png" width="100%">
+<img alt="Yarestrv: agent-driven business value" src="./assets/hero-banner.webp" width="100%">
 
 <p align="center">
   <a href="https://github.com/yarestrv"><img alt="Profile" src="https://img.shields.io/badge/Profile-Explore-6D4CC7?style=flat-square&logo=githubpages&logoColor=white"></a>
