@@ -64,9 +64,3 @@ I care about the unglamorous parts too — evaluation, durable state, observabil
   </tr>
 </table>
 -->
-
-## GitHub Roast
-
-<p align="center">
-  <sub>Build patiently. Verify relentlessly. Keep what works.</sub>
-</p>
