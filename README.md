@@ -8,35 +8,37 @@
 
 ## Hello, I'm Yarestrv
 
-I'm a full-stack developer working on **[web apps and developer tooling]**. My current focus is building **[what you're currently building]**, and I care about clean architecture, reliable systems, and things that just work.
+I'm an engineer working on **AI Agent development** — building agent systems that plan, call tools, coordinate with each other, and stay dependable in production.
 
-I care about the details too: **[evaluation, durable state, observability]** — the unglamorous parts that make software dependable. Good software should survive edge cases and be easy to reason about.
+My current work also covers **Ontology** and **AIP Agent development**: grounding agents in a shared semantic layer, so they reason over real domain knowledge instead of guessing.
+
+I care about the unglamorous parts too — evaluation, durable state, observability, and clear safety boundaries. A useful agent should be able to explain what it did, and recover when something goes wrong.
 
 ## What I work on
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>Frontend</h3>
-      <p>I build fast, accessible interfaces with component-driven architecture and a strong design system.</p>
-      <p><code>TypeScript</code> · <code>React</code> · <code>Vue</code> · <code>CSS</code></p>
+      <h3>AI Agent development</h3>
+      <p>I build agent systems: task planning, tool use, memory, and multi-agent orchestration.</p>
+      <p><code>Python</code> · <code>TypeScript</code> · <code>Tool protocols</code> · <code>Structured outputs</code></p>
     </td>
     <td width="50%" valign="top">
-      <h3>Backend</h3>
-      <p>I design APIs and services that are modular, observable, and easy to evolve.</p>
-      <p><code>Node.js</code> · <code>Go</code> · <code>Python</code> · <code>PostgreSQL</code></p>
+      <h3>Ontology</h3>
+      <p>I model domain knowledge into a semantic layer that grounds agent reasoning in real data.</p>
+      <p><code>Knowledge modeling</code> · <code>Knowledge graphs</code> · <code>RAG</code></p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>Tooling & quality</h3>
-      <p>I automate the boring parts: tests, CI, deployments, and repeatable workflows.</p>
-      <p><code>Docker</code> · <code>Git</code> · <code>CI/CD</code> · <code>Linux</code></p>
+      <h3>AIP Agent development</h3>
+      <p>I develop agents on AIP — connecting models, tools, and data into repeatable workflows.</p>
+      <p><code>AIP</code> · <code>Python</code> · <code>APIs</code></p>
     </td>
     <td width="50%" valign="top">
-      <h3>Product surfaces</h3>
-      <p>I turn requirements into clean, inspectable product experiences people enjoy.</p>
-      <p><code>TypeScript</code> · <code>FastAPI</code> · <code>Next.js</code></p>
+      <h3>Runtime &amp; reliability</h3>
+      <p>Evaluation, durable state, and observability — so every agent run is inspectable and recoverable.</p>
+      <p><code>Docker</code> · <code>CI/CD</code> · <code>Observability</code></p>
     </td>
   </tr>
 </table>
