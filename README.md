@@ -43,38 +43,27 @@ I care about the unglamorous parts too — evaluation, durable state, observabil
   </tr>
 </table>
 
+<!--
+  Selected projects — hidden for now (cindy / xskill are forks I have not worked on).
+  To enable later: remove the comment markers below and replace the placeholders.
+
 ## Selected projects
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3><a href="https://github.com/yarestrv/[repo1]">Project One</a></h3>
-      <p>A [one-line description of what this project does and the problem it solves].</p>
-      <p>
-        <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white">
-        <img alt="Stars" src="https://img.shields.io/badge/Stars-0-6D4CC7?style=flat-square">
-      </p>
+      <h3><a href="https://github.com/yarestrv/REPO-NAME">Project name</a></h3>
+      <p>A one-line description of what this project does and the problem it solves.</p>
+      <p><code>TypeScript</code> · <code>Python</code></p>
     </td>
     <td width="50%" valign="top">
-      <h3><a href="https://github.com/yarestrv/[repo2]">Project Two</a></h3>
-      <p>A [one-line description of what this project does and the problem it solves].</p>
-      <p>
-        <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white">
-        <img alt="Stars" src="https://img.shields.io/badge/Stars-0-2563A9?style=flat-square">
-      </p>
+      <h3><a href="https://github.com/yarestrv/REPO-NAME">Project name</a></h3>
+      <p>A one-line description of what this project does and the problem it solves.</p>
+      <p><code>TypeScript</code> · <code>Python</code></p>
     </td>
   </tr>
 </table>
-
-## GitHub Stats
-
-<p align="center">
-  <img alt="GitHub stats and top languages" src="./assets/github-stats.png" width="100%">
-</p>
-
-<p align="center">
-  <img alt="streak" src="https://streak-stats.demolab.com/?user=yarestrv&hide_border=true">
-</p>
+-->
 
 ## GitHub Roast
 
