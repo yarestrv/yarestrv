@@ -7,3 +7,6 @@ assets/profile2.png
 assets/profile3.png
 assets/hero_banner_v4.png
 assets/hero-banner.png
+
+# Local-only banner generator (kept on disk, not published)
+banner-maker.html
