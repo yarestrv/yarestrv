@@ -22,36 +22,24 @@ I also work on **Ontology** and **AIP-based agent development**, grounding agent
     <td width="50%" valign="top">
       <h3>Agent harness &amp; runtime</h3>
       <p>The loop that drives an agent: planning, step execution, tool dispatch, and context management.</p>
-      <p><code>Python</code> · <code>TypeScript</code> · <code>Agent loops</code> · <code>Structured outputs</code></p>
+      <p><code>Python</code> · <code>TypeScript</code> · <code>Tool protocols</code> · <code>Structured outputs</code></p>
     </td>
-    <td width="50%" valign="top">
-      <h3>Tool execution &amp; protocols</h3>
-      <p>Wiring tools into the loop: schemas, protocol handling, argument validation, and failure recovery.</p>
-      <p><code>Tool protocols</code> · <code>Function calling</code> · <code>Validation</code> · <code>Retries</code></p>
-    </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <h3>Sessions, state &amp; memory</h3>
       <p>Durable sessions with resume and fork, context compaction, and long-term memory retrieval.</p>
       <p><code>Persistence</code> · <code>Context management</code> · <code>Memory</code> · <code>RAG</code></p>
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <h3>Delegation &amp; multi-agent</h3>
       <p>Sub-agents, task fan-out, and orchestration across specialized agents with bounded reporting.</p>
       <p><code>Sub-agents</code> · <code>Orchestration</code> · <code>Workflows</code></p>
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <h3>Ontology &amp; knowledge grounding</h3>
       <p>Modelling domain knowledge into a semantic layer that grounds agent reasoning in real data.</p>
       <p><code>Ontology</code> · <code>Knowledge graphs</code> · <code>Semantic layer</code> · <code>RAG</code></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Observability &amp; evaluation</h3>
-      <p>Tracing, replaying, and evaluating agent runs, so behavior is inspectable and regressions get caught.</p>
-      <p><code>Tracing</code> · <code>Replay</code> · <code>Evaluation</code></p>
     </td>
   </tr>
 </table>
