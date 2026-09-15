@@ -11,7 +11,7 @@
 
 I'm an engineer working on the **AI Agent harness** — the runtime layer that turns a language model into a dependable agent. My focus is the harness itself: the agent loop, step execution, tool dispatch, and context management across long-running runs.
 
-I care about the parts that make agents production-ready: **permission and sandbox boundaries, durable session state, resumability, sub-agent delegation, and observability**. A harness should be able to explain what it did — and recover cleanly when a step fails.
+I care about the parts that make agents dependable in practice: **durable session state, resumability, sub-agent delegation, model and provider abstraction, and observability**. A harness should be able to explain what it did — and recover cleanly when a step fails.
 
 I also work on **Ontology** and **AIP-based agent development**, grounding agents in a shared semantic layer instead of guessing.
 
@@ -22,12 +22,12 @@ I also work on **Ontology** and **AIP-based agent development**, grounding agent
     <td width="50%" valign="top">
       <h3>Agent harness &amp; runtime</h3>
       <p>The loop that drives an agent: planning, step execution, tool dispatch, and context management.</p>
-      <p><code>Python</code> · <code>TypeScript</code> · <code>Tool protocols</code> · <code>Structured outputs</code></p>
+      <p><code>Python</code> · <code>TypeScript</code> · <code>Agent loops</code> · <code>Structured outputs</code></p>
     </td>
     <td width="50%" valign="top">
-      <h3>Tools &amp; sandboxing</h3>
-      <p>Tool execution with explicit permission models, file and process isolation, and fail-closed boundaries.</p>
-      <p><code>Sandboxing</code> · <code>Permissions</code> · <code>Process / FS isolation</code></p>
+      <h3>Tool execution &amp; protocols</h3>
+      <p>Wiring tools into the loop: schemas, protocol handling, argument validation, and failure recovery.</p>
+      <p><code>Tool protocols</code> · <code>Function calling</code> · <code>Validation</code> · <code>Retries</code></p>
     </td>
   </tr>
   <tr>
@@ -44,14 +44,14 @@ I also work on **Ontology** and **AIP-based agent development**, grounding agent
   </tr>
   <tr>
     <td width="50%" valign="top">
+      <h3>Ontology &amp; knowledge grounding</h3>
+      <p>Modelling domain knowledge into a semantic layer that grounds agent reasoning in real data.</p>
+      <p><code>Ontology</code> · <code>Knowledge graphs</code> · <code>Semantic layer</code> · <code>RAG</code></p>
+    </td>
+    <td width="50%" valign="top">
       <h3>Observability &amp; evaluation</h3>
       <p>Tracing, replaying, and evaluating agent runs, so behavior is inspectable and regressions get caught.</p>
       <p><code>Tracing</code> · <code>Replay</code> · <code>Evaluation</code></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Model &amp; provider layer</h3>
-      <p>Provider abstraction, streaming, retries, and routing across models — without leaking into the loop.</p>
-      <p><code>Provider APIs</code> · <code>Streaming</code> · <code>Routing</code></p>
     </td>
   </tr>
 </table>
